@@ -1,5 +1,7 @@
 # Multimodal VLM v1.0
 
+https://github.com/user-attachments/assets/4851bd73-0e7c-4056-9d30-21f772d3b47d
+
 A comprehensive multimodal vision-language model application supporting both image and video inference tasks. This application integrates four specialized models for document processing, OCR, spatial reasoning, and video understanding.
 
 ## System Requirements
