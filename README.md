@@ -7,7 +7,7 @@ A comprehensive multimodal vision-language model application supporting both ima
 - **GPU**: NVIDIA H200 MIG 3g.71gb (104GB VRAM)
 - **CUDA**: Version 12.8
 - **PyTorch**: 2.8.0+cu128
-- **Python**: 3.8+
+- **Python**: 3.10+
 
 ## Supported Models
 
