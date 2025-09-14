@@ -10,7 +10,7 @@ import cv2
 from transformers import (
     Qwen2_5_VLForConditionalGeneration,
     Qwen2VLForConditionalGeneration,
-    Glm4vForConditionalGeneration,
+    #Glm4vForConditionalGeneration,
     AutoProcessor,
     TextIteratorStreamer,
 )
@@ -33,7 +33,7 @@ model_m = Qwen2_5_VLForConditionalGeneration.from_pretrained(
 ).to(device).eval()
 
 # Load Megalodon-OCR-Sync-0713
-MODEL_ID_T = "prithivMLmods/Megalodon-OCR-Sync-0713"
+MODEL_ID_T = "prithivMLmods/Gliese-OCR-7B-Post1.0"
 processor_t = AutoProcessor.from_pretrained(MODEL_ID_T, trust_remote_code=True)
 model_t = Qwen2_5_VLForConditionalGeneration.from_pretrained(
     MODEL_ID_T,
@@ -92,7 +92,7 @@ def generate_image(model_name: str, text: str, image: Image.Image,
     if model_name == "Camel-Doc-OCR-062825":
         processor = processor_m
         model = model_m
-    elif model_name == "Megalodon-OCR-Sync-0713":
+    elif model_name == "Gliese-OCR-7B-Post1.0":
         processor = processor_t
         model = model_t
     elif model_name == "Video-MTR":
@@ -148,7 +148,7 @@ def generate_video(model_name: str, text: str, video_path: str,
     if model_name == "Camel-Doc-OCR-062825":
         processor = processor_m
         model = model_m
-    elif model_name == "Megalodon-OCR-Sync-0713":
+    elif model_name == "Gliese-OCR-7B-Post1.0":
         processor = processor_t
         model = model_t
     elif model_name == "Video-MTR":
@@ -268,14 +268,14 @@ with gr.Blocks(css=css, theme="bethecloud/storj_theme") as demo:
                 with gr.Accordion("(Result.md)", open=False):
                     markdown_output = gr.Markdown(label="(Result.md)")
             model_choice = gr.Radio(
-                choices=["Camel-Doc-OCR-062825", "Video-MTR", "Megalodon-OCR-Sync-0713", "ViLaSR-7B"],
+                choices=["Camel-Doc-OCR-062825", "Video-MTR", "Gliese-OCR-7B-Post1.0", "ViLaSR-7B"],
                 label="Select Model",
                 value="Camel-Doc-OCR-062825"
             )
             gr.Markdown("**Model Info 💻** | [Report Bug](https://huggingface.co/spaces/prithivMLmods/Multimodal-VLM-v1.0/discussions)")
 
             gr.Markdown("> [Camel-Doc-OCR-062825](https://huggingface.co/prithivMLmods/Camel-Doc-OCR-062825) is a Qwen2.5-VL-7B-Instruct finetune, highly optimized for document retrieval, structured extraction, analysis, and direct Markdown generation from images and PDFs.")
-            gr.Markdown("> [Megalodon-OCR-Sync-0713](https://huggingface.co/prithivMLmods/Megalodon-OCR-Sync-0713), finetuned from Qwen2.5-VL-3B-Instruct, specializes in context-aware multimodal document extraction and analysis, excelling at retrieval, layout parsing, math, and chart/table recognition.")
+            gr.Markdown("> [Gliese-OCR-7B-Post1.0](https://huggingface.co/prithivMLmods/Gliese-OCR-7B-Post1.0)  is a fine-tuned version of Camel-Doc-OCR-062825, optimized for Document Retrieval, Content Extraction, and Analysis Recognition. Built on top of the Qwen2.5-VL architecture, this model enhances document comprehension capabilities.")
             gr.Markdown("> [ViLaSR-7B](https://huggingface.co/inclusionAI/ViLaSR) focuses on reinforcing spatial reasoning in visual-language tasks by combining interwoven thinking with visual drawing, making it especially suited for spatial reasoning and complex tip-based queries.")
             gr.Markdown("> [Video-MTR](https://huggingface.co/Phoebe13/Video-MTR) introduces reinforced multi-turn reasoning for long-form video understanding, enabling iterative key segment selection and deeper question comprehension.")
        
